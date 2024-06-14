@@ -12,6 +12,7 @@ import { menuItemsRouter } from './menu_item/menu_item.router';
 import { commentsRouter } from './comment/comment.router';
 import { ordersRouter } from './orders/orders.router';
 import { authRouter } from './auth/auth.router';
+import { readFileSync } from 'fs';
 
 const app = new Hono();
 
@@ -29,10 +30,15 @@ app.route("/orders", ordersRouter);
 app.route("auth/", authRouter);
 
 // Health check endpoint
-app.get('/', (c) => {
-  return c.text('Programming is good');
-});
-
+app.get('/', async(c)=>{
+  try{
+  // return c.html(readFileSync('./index.html', 'utf8'))
+  let html = readFileSync('./index.html', 'utf8');
+  return c.html(html)
+}catch(error :any){
+  return c.json({error :error.message, status: 500})
+}}
+)
 // Error handling middleware
 app.onError((err, c) => {
   console.error('Unhandled error:', err);
