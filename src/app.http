@@ -6,32 +6,32 @@
 # GET http://localhost:3000/category
 
 
-GET http://localhost:3000/menu_item/2
+GET http://localhost:8000/menu_item/2
 ###
-GET http://localhost:3000/users
+GET http://localhost:8000/users
 
 ###
-DELETE   http://localhost:3000/orders/1
+DELETE   http://localhost:8000/orders/1
 Authorization: 
 ###
-DELETE http://localhost:3000/users/1
+DELETE http://localhost:8000/users/1
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJwaXRheiIsInJvbGUiOiJkcml2ZXIiLCJleHAiOjE3MTgxNDMzMzN9.R0lTOQhUm2ElkWGU0D2LbIBlZYXo_pWugN48nkYuGTQ
 
 ###
-GET http://localhost:3000/category
+GET http://localhost:8000/category
 ###
-GET http://localhost:3000/city/2
+GET http://localhost:8000/city/2
 ###
-GET http://localhost:3000/driver/1
+GET http://localhost:8000/driver/1
 ###
-GET http://localhost:3000/restaurant/1
+GET http://localhost:8000/restaurant/1
 ###
-GET http://localhost:3000/address
+GET http://localhost:8000/address
 ###
-GET http://localhost:3000/restaurant_owner
+GET http://localhost:8000/restaurant_owner
 
 ###
-GET http://localhost:3000/restaurant_owner/1
+GET http://localhost:8000/restaurant_owner/1
 ###insert
 POST http://localhost:3000/auth
 Content-Type: application/json
@@ -43,14 +43,14 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:3000/restaurant_owner/1
+DELETE http://localhost:8000/restaurant_owner/1
 
 ###search
-GET http://localhost:3000/driver
+GET http://localhost:8000/driver
 
 
 ###GET Category
-GET http://localhost:3000/category
+GET http://localhost:8000/category
 Authorization: 
 
 Content-Type: application/json
@@ -59,10 +59,10 @@ Content-Type: application/json
 }
 
 ###DELETE a category
-DELETE http://localhost:3000/category/3
+DELETE http://localhost:8000/category/3
 ###
 ### Creating a category
-POST http://localhost:3000/category
+POST http://localhost:8000/category
 Content-Type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKYXkiLCJyb2xlIjoidXNlciIsImV4cCI6MTcxODE5NTYyOH0.aw-h6VtCw4N4eLJRyh46HpceyY64mg3l8S8d1sa3bNI
 
