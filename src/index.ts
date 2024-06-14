@@ -29,7 +29,7 @@ app.route("/orders", ordersRouter);
 app.route("auth/", authRouter);
 
 // Health check endpoint
-app.get('/ok', (c) => {
+app.get('/', (c) => {
   return c.text('Programming is good');
 });
 
