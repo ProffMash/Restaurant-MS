@@ -24,7 +24,7 @@ GET http://localhost:8000/city/2
 ###
 GET http://localhost:8000/driver/1
 ###
-GET http://localhost:8000/restaurant/1
+GET http://localhost:8000/restaurant
 ###
 GET http://localhost:8000/address
 ###
@@ -71,11 +71,11 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKYXkiLCJyb2xlIjoi
 }
 
 ###CITY
-DELETE http://localhost:3000/city/13
+DELETE http://localhost:8000/city/13
 ###
 
 ### create a city
-POST http://localhost:3000/city
+POST http://localhost:8000/city
 Content-Type: application/json
 
 {
@@ -84,11 +84,11 @@ Content-Type: application/json
 }
 
 ###DELETE Driver
-DELETE http://localhost:3000/driver/1
+DELETE http://localhost:8000/driver/1
 Authorization: 
 
 ### UPDATE Driver
-PUT http://localhost:3000/driver/1
+PUT http://localhost:8000/driver/1
 Content-Type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJwaXRheiIsInJvbGUiOiJkcml2ZXIiLCJleHAiOjE3MTgyNzkwNDl9.B612jWopU0oyhfZN1yHfEOT5B26BjSFh41VN14Xz9W0
 
@@ -102,10 +102,10 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJwaXRheiIsInJvbGUi
 }
 
 ###DELETE menu_item
-DELETE http://localhost:3000/menu_item/1
+DELETE http://localhost:8000/menu_item/1
 
 ###UPDATE
-PUT http://localhost:3000/menu_item/1
+PUT http://localhost:8000/menu_item/1
 Content-Type: application/json
 
 {
@@ -116,15 +116,15 @@ Content-Type: application/json
 }
 
 ###DELETE order
-DELETE http://localhost:3000/orders/1
+DELETE http://localhost:8000/orders/1
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJEYXZ5Iiwicm9sZSI6InJlc3RhdXJhbnRfb3duZXIiLCJleHAiOjE3MTgxNDQwNjZ9.Z2yyawLVyQDienauW9ALcWtzab10srau61nxkoNX7Ms
 
 ###DELETE restaurant
-DELETE http://localhost:3000/restaurant/3
+DELETE http://localhost:8000/restaurant/3
 
 ###
 # Register
-POST http://localhost:3000/auth/register
+POST http://localhost:8000/auth/register
 Content-Type: application/json
 
 {
@@ -135,7 +135,7 @@ Content-Type: application/json
 }
 
 ### Login
-POST http://localhost:3000/auth/login
+POST http://localhost:8000/auth/login
 Content-Type: application/json
 
 {
@@ -144,14 +144,14 @@ Content-Type: application/json
 }
 
 ###Token
-GET http://localhost:3000/city/2
+GET http://localhost:8000/city/2
 Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJwaXRheiIsInJvbGUiOiJkcml2ZXIiLCJleHAiOjE3MTgyOTcxNzR9.eAKKYf9BcGhtGc2fAwGoGTeRTIDXCeL10jVNBI8MXPw
 ###
 
 
 
 #insert Address
-POST http://localhost:3000/address
+POST http://localhost:8000/address
 Content-Type: application/json
 
 {
@@ -165,11 +165,11 @@ Content-Type: application/json
 
 ###
 #get driver
-GET http://localhost:3000/driver/5
+GET http://localhost:8000/driver/5
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJwaXRheiIsInJvbGUiOiJkcml2ZXIiLCJleHAiOjE3MTgyODcwMzF9.p_3WiACOwsp6GLI6-TNlzQ_ZzdS0GA6HT1fzwtJ4XNQ
 
 ###//get comment only from coments ~user
-GET http://localhost:3000/orders
+GET http://localhost:8000/orders
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKYXkiLCJyb2xlIjoidXNlciIsImV4cCI6MTcxODI4NTcyNn0.gPwbnymeAQezS6w2vsIOXUQVV3OV2Tlq-kx0GRK2oYw
 
 

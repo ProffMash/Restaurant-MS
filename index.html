@@ -4,22 +4,197 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        h2{
-            color:whitesmoke;
-            text-align: center;
-        }
-        .container{
-            width: 50%;
-            margin: 0 auto;
-            background: #333;
+    body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
 
-        }
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+nav {
+    background: #444;
+    padding: 0.5rem 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav ul li a:hover{
+    background: #fff;
+    color:#666;
+    border-radius: 5px;
+    padding:5px 5px;
+}
+main {
+    padding: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+section h2 {
+    border-bottom: 2px solid #444;
+    padding-bottom: 0.5rem;
+}
+
+pre {
+    background: #f4f4f4;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    overflow-x: auto;
+}
     </style>
-    <title>Document</title>
+    <title>David Macharia - Restaurant API Documentation</title>
 </head>
 <body>
-    <div class="container">
-        <h2>David Macharia</h2>
-    </div>
+    <header>
+        <h1>David Macharia - Restaurant API DOCUMENTATION</h1>
+        <p>Your gateway to managing restaurant data efficiently.</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#authentication">Authentication</a></li>
+            <li><a href="#endpoints">Endpoints</a></li>
+            <li><a href="#examples">Examples</a></li>
+            <li><a href="#errors">Error Codes</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="introduction">
+            <h2>Introduction</h2>
+            <p>The Restaurant API allows the access and management of restaurant data including adding, deleting, updating.</p>
+        </section>
+
+        <section id="authentication">
+            <h2>Authentication</h2>
+            <p>To use this API, you need to authenticate using a token. Pass the token in your requests.</p>
+            <pre><code>GET hhttps://restaurantms.azurewebsites.net/category     
+             Authorization: token
+            </code></pre>
+        </section>
+
+        <section id="endpoints">
+            <h2>Endpoints</h2>
+            <h3>GET restaurants</h3>
+            <p>Retrieve a list of restaurants.</p>
+            <pre><code>GET https://restaurantms.azurewebsites.net/restaurants
+ Authentication: token
+Response:
+[
+{
+    "id": 12345,
+    "name": "Sarova",
+    "street_address": "Naka01",
+    "zip_code": "Naks0102",
+    "city_id": 54321,
+    "created_at": "2024-06-05T10:00:00.000Z",
+    "updated_at": "2024-06-05T10:10:00.000Z"
+  },
+    ...
+]
+            </code></pre>
+
+            <h3>POST </h3>
+            <p>Adding a new city.</p>
+            <pre><code>POST https://restaurantms.azurewebsites.net/city
+Authentication: token
+  Content-Type: application/json
+{
+    "name": "Kisumu",
+    "state_id": 1
+  }
+Response:
+{
+    "City created successfully"
+}
+            </code></pre>
+
+            <h3>DELETE</h3>
+            <p>Deleting a driver with ID 1.</p>
+            <pre><code>DELETE https://restaurantms.azurewebsites.net/driver/1
+  Authorization: token
+            </code></pre>
+
+            <h3>PUT</h3>
+            <p>Updating the driver with ID 1.</p>
+            <pre><code>PUT https://restaurantms.azurewebsites.net/driver/1
+  Authorization: token
+  Content-Type: application/json
+  {
+    "car_make": "Toyota",
+    "car_model": "Corolla",
+    "car_year": 2020,
+    "user_id": 1,
+    "online": true,
+    "delivering": false
+  }
+Response:
+{
+    "Driver updated successfully
+}
+            </code></pre>
+        </section>
+
+        <section id="examples">
+            <h2>Examples</h2>
+            <p>Here are some examples of how to use the API.</p>
+            <pre><code>
+        PUT https://restaurantms.azurewebsites.net/driver/1
+        Authorization : token
+
+        DELETE https://restaurantms.azurewebsites.net/driver/1
+        Authorization: token
+
+        POST https://restaurantms.azurewebsites.net/city
+        Authorization : token
+
+            </code></pre>
+        </section>
+
+        <section id="errors">
+            <h2>Error Codes</h2>
+            <p>Common error codes returned by the API.</p>
+            <ul>
+                <li><strong>400 Bad Request:</strong> The request could not be understood or was missing required parameters.</li>
+                <li><strong>404 Not Found:</strong> The requested resource could not be found.</li>
+                <li><strong>500 Internal Server Error:</strong> An error occurred on the server.</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>If you have any questions, please contact support at <a href="mailto:davidmacharia8485@gmail.com">davidmacharia8485@gmail.com</a> | +254 746 454 462.</p>
+        </section>
+    </main>
 </body>
 </html>
