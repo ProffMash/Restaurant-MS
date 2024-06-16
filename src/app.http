@@ -128,10 +128,11 @@ POST http://localhost:8000/auth/register
 Content-Type: application/json
 
 {
-  "username": "Jay",
-  "userId": 4,
+  "username": "dev",
+  "userId": 6,
   "password": "pass",
-  "role": "user"
+  "role": "user",
+  "email": "kdmacharia8485@gmail.comd"
 }
 
 ### Login
