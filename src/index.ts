@@ -13,6 +13,8 @@ import { commentsRouter } from './comment/comment.router';
 import { ordersRouter } from './orders/orders.router';
 import { authRouter } from './auth/auth.router';
 import { readFileSync } from 'fs';
+import cron from 'node-cron'
+import { mailFunction } from './mailer/mail';
 
 const app = new Hono();
 
@@ -29,32 +31,40 @@ app.route("/comment", commentsRouter);
 app.route("/orders", ordersRouter);
 app.route("auth/", authRouter);
 
-// Health check endpoint
-app.get('/', async(c)=>{
-  try{
-  // return c.html(readFileSync('./index.html', 'utf8'))
-  let html = readFileSync('./index.html', 'utf8');
-  return c.html(html)
-}catch(error :any){
-  return c.json({error :error.message, status: 500})
-}}
-)
-// Error handling middleware
-app.onError((err, c) => {
-  console.error('Unhandled error:', err);
-  return c.text('Internal Server Error', 500);
-});
+// // Health check endpoint
+// app.get('/', async(c)=>{
+//   try{
+//   // return c.html(readFileSync('./index.html', 'utf8'))
+//   let html = readFileSync('./index.html', 'utf8');
+//   return c.html(html)
+// }catch(error :any){
+//   return c.json({error :error.message, status: 500})
+// }}
+// )
+// // Error handling middleware
+// app.onError((err, c) => {
+//   console.error('Unhandled error:', err);
+//   return c.text('Internal Server Error', 500);
+// });
 
-// 404 handler
-app.notFound((c) => {
-  return c.text('Not Found!', 404);
-});
+// // 404 handler
+// app.notFound((c) => {
+//   return c.text('Not Found!', 404);
+// });
 
-// Start the server
-const port = process.env.PORT || 8000;
-console.log(`Server is running on port ${port}`);
+// // Start the server
+// const port = process.env.PORT || 8000;
+// console.log(`Server is running on port ${port}`);
 
-serve({
-  fetch: app.fetch,
-  port: Number(port),
-});
+// serve({
+//   fetch: app.fetch,
+//   port: Number(port),
+// });
+
+
+//hello world every minute with cron
+// cron.schedule('*/2 * * * * *', () => {
+//   console.log('happy fathers Day');
+// });
+
+mailFunction()
